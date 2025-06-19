@@ -4,6 +4,7 @@ import { ThemeProvider } from "next-themes";
 import Header from "@/components/ui/Header";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark , neobrutalism } from "@clerk/themes";
+import { Html, Body, Main, Footer } from "next/document";
 
 
 
@@ -17,8 +18,8 @@ export default function RootLayout({ children }) {
     <ClerkProvider suppressHydrationWarning appearance={{
       baseTheme: [dark],
     }}>
-    <html lang="en">
-      <body suppressHydrationWarning >
+    <Html lang="en">
+      <Body suppressHydrationWarning >
         <ThemeProvider
             attribute="class"
             defaultTheme="dark"
@@ -29,18 +30,18 @@ export default function RootLayout({ children }) {
             <Header/>
 
             {/* Main */}
-            <main className="min-h-screen">{children}</main>
+            <Main className="min-h-screen">{children}</Main>
 
             {/* footer */}
-            <footer className="bg-muted/50 py-12">
+            <Footer className="bg-muted/50 py-12">
               <div className="container mx-auto px-4 text-center text-gray-400">
                 <p>Made by AURA</p>
-              </div>              
-            </footer>
-            
+              </div>
+            </Footer>
+
           </ThemeProvider>
-      </body>
-    </html>
+      </Body>
+    </Html>
     </ClerkProvider>
   );
 }
