@@ -170,3 +170,22 @@ body {
 .zoom-on-scroll.scrolled  img {
   transform: scale(1.2);
 }
+
+.asteroid {
+  position: absolute;
+  bottom: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.8), rgba(255,255,255,0.2));
+  box-shadow: 0 0 8px rgba(255,255,255,0.5);
+  transition: opacity 0.5s ease-out;
+}
+.bubble {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #7f5af0, #2cb67d);
+  box-shadow: 0 0 60px 20px rgba(127, 90, 240, 0.6),
+              0 0 120px 40px rgba(44, 182, 125, 0.4);
+  transition: all 0.3s ease;
+}
+

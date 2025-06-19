@@ -1,19 +1,16 @@
 import { auth } from '@clerk/nextjs/server'
 import React from 'react'
-import { getUserOnboardingStatus } from '@/actions/user'
 import { industries } from '@/data/industries';
 import { redirect } from 'next/navigation';
 import OnboardingForm from './_components/onboarding-form';
+import CoraChat from '@/components/ui/CoraChat';
 
 const OnboardingPage = async () => {
-  const { isOnboarded } = await getUserOnboardingStatus();
 
-  if(isOnboarded){
-    redirect("/dashboard")
-  }
   return (
     <main>
       <OnboardingForm industries={industries}/>
+      <CoraChat />
     </main>
   )
 }

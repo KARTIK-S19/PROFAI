@@ -4,17 +4,20 @@ import Link from 'next/link'
 import { Button } from './button'
 import { LayoutDashboard, StarIcon, StarsIcon , ChevronDown, File, FileText, Pen, PenBox, GraduationCap } from 'lucide-react'
 import { DropdownMenu , DropdownMenuTrigger , DropdownMenuLabel , DropdownMenuItem , DropdownMenuSeparator , DropdownMenuContent } from './dropdown-menu'
-import { checkUser } from '@/lib/checkUser'
-
+import Image from 'next/image'
 
 const Header = async () => {
-  await checkUser();
   return (
     <header className='fixed top-0 w-full border-b bg-background/80 backdrop-blur-md z-50 supports-[backdrop-filter]:bg-background/60 px-5 py-3 flex justify-between align-center'>
 
       <div>
         <Link href={"/"}>
-          <h1 className='text-3xl'>PROFAI</h1>
+          <Image 
+          src={"/logo.svg"} 
+          width={120} 
+          height={120} 
+          alt="Logo"
+          />
         </Link>
       </div>
 
@@ -22,12 +25,14 @@ const Header = async () => {
     <div className='flex gap-2 md:gap-7'>
       <div className='flex gap-2 md:gap-7'>
         <SignedIn>
-          <Link href={"/dashboard"}>
+
+          <Link href={"/dashboard"}  className={"my-auto"}>
           <Button variant="outline">
             <LayoutDashboard/>
              <span className='hidden md:block'>Industry Insights</span>
           </Button>
           </Link>
+
 
 
       <DropdownMenu>
@@ -70,7 +75,7 @@ const Header = async () => {
       
       <SignedOut>
         <SignInButton afterSignInUrl="/onboarding" forceRedirectUrl='/onboarding'>
-          <Button variant={"outline"}>Sign in</Button>
+          <Button variant={"outline"} className="my-auto">Sign in</Button>
         </SignInButton>
       </SignedOut>
             <SignedIn>

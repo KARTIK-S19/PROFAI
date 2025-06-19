@@ -6,7 +6,6 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { dark , neobrutalism } from "@clerk/themes";
 
 
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "PROFAI - Ai Professor",
@@ -19,7 +18,7 @@ export default function RootLayout({ children }) {
       baseTheme: [dark],
     }}>
     <html lang="en">
-      <body suppressHydrationWarning className={` ${inter.className} `}>
+      <body suppressHydrationWarning >
         <ThemeProvider
             attribute="class"
             defaultTheme="dark"
