@@ -1,11 +1,14 @@
 import React from 'react'
+import Protected from '@/components/Protected'
 
 const IndustryInsightsPage = async () => {
 
   return (
-    <div className='my-24 mx-5'>
-      IndustryInsightsPage
-    </div>
+    <Protected>
+      <div className='my-24 mx-5'>
+        IndustryInsightsPage
+      </div>
+    </Protected>
   )
 }
 
